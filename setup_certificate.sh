@@ -35,7 +35,7 @@ docker run -it --rm \
   --name certbot \
   -v $(pwd)/certbot/conf:/etc/letsencrypt \
   -v $(pwd)/certbot/www:/var/www/certbot \
-  certbot/certbot certonly --staging --webroot -w /var/www/certbot --force-renewal --email $EMAIL -d $DOMAIN --agree-tos
+  certbot/certbot certonly --webroot -w /var/www/certbot --force-renewal --email $EMAIL -d $DOMAIN --agree-tos
 
 if [ $? -ne 0 ]; then
     echo "Error running certbot."
